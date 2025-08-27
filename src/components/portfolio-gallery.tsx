@@ -8,6 +8,8 @@ import Image, { StaticImageData } from "next/image"
 import ShampooCanavisImage from "../../public/shampoocanavis.jpg"
 import BloomiotImage from "../../public/bloomiot.jpg"
 import GrekImage from "../../public/grek.jpg"
+import MenuGoImage from "../../public/logomenugo.png"
+import ArteJaspeImage from "../../public/artejaspe.jpg"
 
 interface PortfolioItem {
   id: number
@@ -45,6 +47,20 @@ const portfolioItems: PortfolioItem[] = [
     category: "branding",
     image: GrekImage,
     description: "Una marca de confección que combina tradición y modernidad.",
+  },
+       {
+    id: 5,
+    title: "MenuGo",
+    category: "branding",
+    image: MenuGoImage,
+    description: "Una marca para una app de tiendas online con pedidos en whatsapp.",
+  },
+         {
+    id: 5,
+    title: "Arte Jaspe",
+    category: "branding",
+    image: ArteJaspeImage,
+    description: "Una marca para una Agencia de Publicidad y Diseño Gráfico.",
   },
 ]
 
