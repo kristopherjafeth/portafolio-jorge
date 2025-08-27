@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import CoffeRootImage from "../../public/cofferoot.jpg"
-import Image, { StaticImageData } from "next/image"
-import ShampooCanavisImage from "../../public/shampoocanavis.jpg"
-import BloomiotImage from "../../public/bloomiot.jpg"
-import GrekImage from "../../public/grek.jpg"
-import MenuGoImage from "../../public/logomenugo.png"
-import ArteJaspeImage from "../../public/artejaspe.jpg"
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import CoffeRootImage from "../../public/cofferoot.jpg";
+import Image, { StaticImageData } from "next/image";
+import ShampooCanavisImage from "../../public/shampoocanavis.jpg";
+import BloomiotImage from "../../public/bloomiot.jpg";
+import GrekImage from "../../public/grek.jpg";
+import MenuGoImage from "../../public/logomenugo.png";
+import ArteJaspeImage from "../../public/artejaspe.jpg";
 
 interface PortfolioItem {
-  id: number
-  title: string
-  category: string
+  id: number;
+  title: string;
+  category: string;
   image: string | StaticImageData;
-  description: string
+  description: string;
 }
 
 const portfolioItems: PortfolioItem[] = [
@@ -25,44 +25,48 @@ const portfolioItems: PortfolioItem[] = [
     title: "Coffee Root",
     category: "branding",
     image: CoffeRootImage,
-    description: "Una marca de café  que conecta con lo natural, lo auténtico, lo que viene de la tierra.",
+    description:
+      "Una marca de café  que conecta con lo natural, lo auténtico, lo que viene de la tierra.",
   },
-    {
+  {
     id: 2,
-    title: "Shampoo Canavis",
+    title: "Fuerte y Poderoso",
     category: "branding",
     image: ShampooCanavisImage,
-    description: "Una marca de shampoo que destaca la frescura y naturalidad de sus ingredientes.",
+    description:
+      "Una marca de shampoo que destaca la frescura y naturalidad de sus ingredientes.",
   },
-    {
+  {
     id: 3,
     title: "Bloomiot",
     category: "branding",
     image: BloomiotImage,
-    description: "Una marca de tecnología para invernaderos que resalta innovación y crecimiento.",
+    description:
+      "Una marca de tecnología para invernaderos que resalta innovación y crecimiento.",
   },
-     {
+  {
     id: 4,
     title: "Grek",
     category: "branding",
     image: GrekImage,
     description: "Una marca de confección que combina tradición y modernidad.",
   },
-       {
+  {
     id: 5,
     title: "MenuGo",
     category: "branding",
     image: MenuGoImage,
-    description: "Una marca para una app de tiendas online con pedidos en whatsapp.",
+    description:
+      "Una marca para una app de tiendas online con pedidos en whatsapp.",
   },
-         {
+  {
     id: 5,
     title: "Arte Jaspe",
     category: "branding",
     image: ArteJaspeImage,
     description: "Una marca para una Agencia de Publicidad y Diseño Gráfico.",
   },
-]
+];
 
 const categories = [
   { id: "all", label: "Todos" },
@@ -70,21 +74,25 @@ const categories = [
   { id: "webdesign", label: "Diseño Web" },
   { id: "packaging", label: "Packaging" },
   { id: "print", label: "Diseño Impreso" },
-
-]
+];
 
 export function PortfolioGallery() {
-  const [activeCategory, setActiveCategory] = useState("all")
+  const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredItems =
-    activeCategory === "all" ? portfolioItems : portfolioItems.filter((item) => item.category === activeCategory)
+    activeCategory === "all"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Mi Portafolio</h2>
+        <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">
+          Mi Portafolio
+        </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-          Una selección de mis mejores trabajos en diseño gráfico, branding y experiencia digital
+          Una selección de mis mejores trabajos en diseño gráfico, branding y
+          experiencia digital
         </p>
       </div>
 
@@ -125,13 +133,17 @@ export function PortfolioGallery() {
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-300" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2 text-balance">{item.title}</h3>
-                <p className="text-muted-foreground text-pretty">{item.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2 text-balance">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-pretty">
+                  {item.description}
+                </p>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -70,7 +70,7 @@ export function HeroSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="https://wa.link/cbxi79"
+            href="#portafolio"
             className="bg-accent hover:bg-accent/90 text-black  px-8 py-2 font-semibold  text-lg rounded-full cursor-pointer"
           >
             Ver Mi Trabajo
