@@ -1,4 +1,52 @@
-"use client";
+// Slider de galería para el modal
+import { useState } from "react";
+function GallerySlider({ images, title }: { images: (string | StaticImageData)[]; title: string }) {
+  const [current, setCurrent] = useState(0);
+  const total = images.length;
+
+  const prev = () => setCurrent((c) => (c === 0 ? total - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === total - 1 ? 0 : c + 1));
+
+  if (total === 0) return null;
+
+  return (
+    <div className="mb-4 flex flex-col items-center">
+      <div className="relative w-full flex items-center justify-center py-12">
+        <button
+          onClick={prev}
+          className="absolute left-0 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center top-1/2 -translate-y-1/2"
+          aria-label="Anterior"
+        >
+          &#8592;
+        </button>
+        <Image
+          src={images[current]}
+          alt={title + ' imagen ' + (current + 1)}
+          width={1200}
+          height={500}
+          className="rounded-md object-contain min-w-[420px] h-auto mx-auto"
+        />
+        <button
+          onClick={next}
+          className="absolute right-0 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center top-1/2 -translate-y-1/2"
+          aria-label="Siguiente"
+        >
+          &#8594;
+        </button>
+      </div>
+      <div className="flex gap-2 mt-2 justify-center">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            className={`w-2 h-2 rounded-full ${idx === current ? 'bg-accent' : 'bg-muted-foreground/30'} transition-colors`}
+            onClick={() => setCurrent(idx)}
+            aria-label={`Ir a la imagen ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 import Image, { StaticImageData } from "next/image";
 import SquareIcon from "../../public/square.svg";
@@ -33,21 +81,12 @@ export function ProjectModal({ open, onClose, item }: ProjectModalProps) {
               {item.title}
             </h3>
             <p className="text-muted-foreground mb-4">{item.longDescription || item.description}</p>
-            {/* Galería de imágenes */}
+            {/* Galería de imágenes como slider */}
             {item.gallery && item.gallery.length > 0 && (
-              <div className="flex gap-2 overflow-x-auto mb-4">
-                {item.gallery.map((img, idx) => (
-                  <Image
-                    key={idx}
-                    src={img}
-                    alt={item.title + ' imagen ' + (idx + 1)}
-                    width={420}
-                    height={320}
-                    className="rounded-md object-contain min-w-[420px] h-80"
-                  />
-                ))}
-              </div>
+              <GallerySlider images={item.gallery} title={item.title} />
             )}
+
+
             {/* Programas utilizados */}
             {item.tools && item.tools.length > 0 && (
               <div className="mb-2">

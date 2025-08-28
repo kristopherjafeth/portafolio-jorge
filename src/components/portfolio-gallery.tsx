@@ -8,9 +8,11 @@ import CoffeRootImage from "../../public/cofferoot.jpg";
 import Image, { StaticImageData } from "next/image";
 import ShampooCanavisImage from "../../public/shampoocanavis.jpg";
 import BloomiotImage from "../../public/bloomiot.jpg";
+import { BloomiotPage } from "@/lib/data";
 import GrekImage from "../../public/grek.jpg";
 import MenuGoImage from "../../public/logomenugo.png";
 import ArteJaspeImage from "../../public/artejaspe.jpg";
+
 
 interface PortfolioItem {
   id: number;
@@ -57,7 +59,7 @@ const portfolioItems: PortfolioItem[] = [
       "Una marca de tecnología para invernaderos que resalta innovación y crecimiento.",
     longDescription:
       "Bloomiot es una marca enfocada en soluciones tecnológicas para el sector agrícola. El branding refleja innovación y crecimiento sostenible.",
-    gallery: [BloomiotImage],
+  gallery: BloomiotPage[0].images,
     tools: ["Figma", "Illustrator"],
   },
   {
