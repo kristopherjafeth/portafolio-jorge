@@ -20,6 +20,14 @@ import GrekImage3 from "../../public/grek/3.jpg";
 import GrekImage9 from "../../public/grek/9.jpg";
 import GrekImage10 from "../../public/grek/10.jpg";
 
+import GrekImagePrint4 from "../../public/grek/4.jpg";
+import GrekImagePrint5 from "../../public/grek/5.jpg";
+import GrekImagePrint6 from "../../public/grek/6.jpg";
+import GrekImagePrint7 from "../../public/grek/7.jpg";
+import GrekImagePrint8 from "../../public/grek/8.jpg";
+import GrekImagePrint11 from "../../public/grek/11.jpg";
+
+
 
 
 
@@ -51,7 +59,14 @@ export const CoffePage = [
 export const ShampooPage = [
     {
         images: [
-            Shampoo1,
+            Shampoo1
+        ],
+    },
+];
+
+export const ShampooPagePrint = [
+    {
+        images: [
             Shampoo2
         ],
     },
@@ -65,6 +80,19 @@ export const GrekPage = [
             GrekImage3,
             GrekImage9,
             GrekImage10
+        ],
+    },
+];
+
+export const GrekPagePrint = [
+    {
+        images: [
+            GrekImagePrint4,
+            GrekImagePrint5,
+            GrekImagePrint6,
+            GrekImagePrint7,
+            GrekImagePrint8,
+            GrekImagePrint11
         ],
     },
 ];

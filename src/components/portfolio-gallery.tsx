@@ -8,7 +8,7 @@ import CoffeRootImage from "../../public/cofferoot.jpg";
 import Image, { StaticImageData } from "next/image";
 import ShampooCanavisImage from "../../public/shampoocanavis.jpg";
 import BloomiotImage from "../../public/bloomiot.jpg";
-import { BloomiotPage, CoffePage, GrekPage, ShampooPage } from "@/lib/data";
+import { BloomiotPage, CoffePage, GrekPage, GrekPagePrint, ShampooPage, ShampooPagePrint } from "@/lib/data";
 import GrekImage from "../../public/grek.jpg";
 import MenuGoImage from "../../public/logomenugo.png";
 import ArteJaspeImage from "../../public/artejaspe.jpg";
@@ -64,7 +64,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 4,
     title: "Grek",
-    categories: ["branding", "print"],
+    categories: ["branding"],
     image: GrekImage,
     description: "Una marca de confección que combina tradición y modernidad.",
     longDescription:
@@ -95,6 +95,29 @@ const portfolioItems: PortfolioItem[] = [
     gallery: [ArteJaspeImage],
     tools: ["Illustrator", "Photoshop", "Figma"],
   },
+  {
+    id: 7,
+    title: "Grek",
+    categories: ["print"],
+    image: GrekImage,
+    description: "Una marca de confección que combina tradición y modernidad.",
+    longDescription:
+      "Grek es una marca de moda que fusiona la tradición textil con tendencias modernas. El proyecto incluyó branding y diseño de etiquetas.",
+    gallery: GrekPagePrint[0].images,
+    tools: ["Illustrator", "InDesign"],
+  },
+    {
+    id: 8,
+    title: "Fuerte y Poderoso",
+    categories: ["packaging", "print"],
+    image: ShampooCanavisImage,
+    description:
+      "Una marca de shampoo que destaca la frescura y naturalidad de sus ingredientes.",
+    longDescription:
+      "Proyecto de identidad visual para una marca de shampoo natural. Se trabajó en la creación de un empaque atractivo y una imagen fresca.",
+    gallery: ShampooPagePrint[0].images,
+    tools: ["Illustrator", "Photoshop"],
+  },
 ];
 
 const categories = [
@@ -110,12 +133,19 @@ export function PortfolioGallery() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
-  const filteredItems =
-    activeCategory === "all"
-      ? portfolioItems
-      : portfolioItems.filter((item) =>
-          item.categories.includes(activeCategory)
-        );
+  let filteredItems = [] as PortfolioItem[];
+  if (activeCategory === "all") {
+    const seenTitles = new Set<string>();
+    filteredItems = portfolioItems.filter((item) => {
+      if (seenTitles.has(item.title)) return false;
+      seenTitles.add(item.title);
+      return true;
+    });
+  } else {
+    filteredItems = portfolioItems.filter((item) =>
+      item.categories.includes(activeCategory)
+    );
+  }
 
   const handleCardClick = (item: PortfolioItem) => {
     setSelectedItem(item);
