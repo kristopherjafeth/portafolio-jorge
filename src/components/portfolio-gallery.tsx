@@ -8,11 +8,10 @@ import CoffeRootImage from "../../public/cofferoot.jpg";
 import Image, { StaticImageData } from "next/image";
 import ShampooCanavisImage from "../../public/shampoocanavis.jpg";
 import BloomiotImage from "../../public/bloomiot.jpg";
-import { BloomiotPage } from "@/lib/data";
+import { BloomiotPage, CoffePage, GrekPage, ShampooPage } from "@/lib/data";
 import GrekImage from "../../public/grek.jpg";
 import MenuGoImage from "../../public/logomenugo.png";
 import ArteJaspeImage from "../../public/artejaspe.jpg";
-
 
 interface PortfolioItem {
   id: number;
@@ -35,7 +34,7 @@ const portfolioItems: PortfolioItem[] = [
       "Una marca de café  que conecta con lo natural, lo auténtico, lo que viene de la tierra.",
     longDescription:
       "Coffee Root es un proyecto de branding que busca transmitir la esencia natural y auténtica del café artesanal. El diseño se inspira en la tierra y la conexión con el origen del producto.",
-    gallery: [CoffeRootImage],
+    gallery: CoffePage[0].images,
     tools: ["Illustrator", "Photoshop", "Figma"],
   },
   {
@@ -47,7 +46,7 @@ const portfolioItems: PortfolioItem[] = [
       "Una marca de shampoo que destaca la frescura y naturalidad de sus ingredientes.",
     longDescription:
       "Proyecto de identidad visual para una marca de shampoo natural. Se trabajó en la creación de un empaque atractivo y una imagen fresca.",
-    gallery: [ShampooCanavisImage],
+    gallery: ShampooPage[0].images,
     tools: ["Illustrator", "Photoshop"],
   },
   {
@@ -59,7 +58,7 @@ const portfolioItems: PortfolioItem[] = [
       "Una marca de tecnología para invernaderos que resalta innovación y crecimiento.",
     longDescription:
       "Bloomiot es una marca enfocada en soluciones tecnológicas para el sector agrícola. El branding refleja innovación y crecimiento sostenible.",
-  gallery: BloomiotPage[0].images,
+    gallery: BloomiotPage[0].images,
     tools: ["Figma", "Illustrator"],
   },
   {
@@ -70,7 +69,7 @@ const portfolioItems: PortfolioItem[] = [
     description: "Una marca de confección que combina tradición y modernidad.",
     longDescription:
       "Grek es una marca de moda que fusiona la tradición textil con tendencias modernas. El proyecto incluyó branding y diseño de etiquetas.",
-    gallery: [GrekImage],
+    gallery: GrekPage[0].images,
     tools: ["Illustrator", "InDesign"],
   },
   {
@@ -114,7 +113,9 @@ export function PortfolioGallery() {
   const filteredItems =
     activeCategory === "all"
       ? portfolioItems
-      : portfolioItems.filter((item) => item.categories.includes(activeCategory));
+      : portfolioItems.filter((item) =>
+          item.categories.includes(activeCategory)
+        );
 
   const handleCardClick = (item: PortfolioItem) => {
     setSelectedItem(item);
