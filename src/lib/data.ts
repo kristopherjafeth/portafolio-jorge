@@ -18,6 +18,8 @@ import Shampoo1 from "../../public/fuertepoderoso/1.jpg";
 import Shampoo2 from "../../public/fuertepoderoso/2.jpg";
 import Shampoo3 from "../../public/fuertepoderoso/3.jpg";
 import Shampoo4 from "../../public/fuertepoderoso/4.jpg";
+import Shampoo5 from "../../public/fuertepoderoso/5.jpg";
+import Shampoo6 from "../../public/fuertepoderoso/6.jpg";
 
 import GrekImage1 from "../../public/grek/1.jpg";
 import GrekImage2 from "../../public/grek/2.jpg";
@@ -70,7 +72,9 @@ export const ShampooPage = [
              Shampoo1,
              Shampoo2,
              Shampoo3,
-             Shampoo4
+             Shampoo4,
+             Shampoo5,
+             Shampoo6
         ],
     },
 ];
