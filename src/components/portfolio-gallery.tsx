@@ -8,7 +8,7 @@ import CoffeRootImage from "../../public/cofferoot.jpg";
 import Image, { StaticImageData } from "next/image";
 import ShampooCanavisImage from "../../public/shampoocanavis.jpg";
 import BloomiotImage from "../../public/bloomiot.jpg";
-import { BloomiotPage, CoffePage, GrekPage, GrekPagePrint, ShampooPage, ShampooPagePrint } from "@/lib/data";
+import { BloomiotPage, CoffePage, GrekPage, ShampooPage } from "@/lib/data";
 import GrekImage from "../../public/grek.jpg";
 import MenuGoImage from "../../public/logomenugo.png";
 import ArteJaspeImage from "../../public/artejaspe.jpg";
@@ -28,7 +28,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: "Coffee Root",
-    categories: ["branding"],
+    categories: ["branding", "packaging"],
     image: CoffeRootImage,
     description:
       "Una marca de café  que conecta con lo natural, lo auténtico, lo que viene de la tierra.",
@@ -64,7 +64,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 4,
     title: "Grek",
-    categories: ["branding"],
+    categories: ["branding", "print", "packaging"],
     image: GrekImage,
     description: "Una marca de confección que combina tradición y modernidad.",
     longDescription:
@@ -83,41 +83,7 @@ const portfolioItems: PortfolioItem[] = [
       "MenuGo es una aplicación que facilita la gestión de pedidos en línea para tiendas y restaurantes. Se desarrolló la identidad visual y la interfaz de usuario.",
     gallery: [MenuGoImage],
     tools: ["Figma", "Photoshop"],
-  },
-  {
-    id: 6,
-    title: "Arte Jaspe",
-    categories: ["branding"],
-    image: ArteJaspeImage,
-    description: "Una marca para una Agencia de Publicidad y Diseño Gráfico.",
-    longDescription:
-      "Arte Jaspe es una agencia creativa dedicada al diseño gráfico y la publicidad. El proyecto incluyó branding, papelería y presencia digital.",
-    gallery: [ArteJaspeImage],
-    tools: ["Illustrator", "Photoshop", "Figma"],
-  },
-  {
-    id: 7,
-    title: "Grek",
-    categories: ["print"],
-    image: GrekImage,
-    description: "Una marca de confección que combina tradición y modernidad.",
-    longDescription:
-      "Grek es una marca de moda que fusiona la tradición textil con tendencias modernas. El proyecto incluyó branding y diseño de etiquetas.",
-    gallery: GrekPagePrint[0].images,
-    tools: ["Illustrator", "InDesign"],
-  },
-    {
-    id: 8,
-    title: "Fuerte y Poderoso",
-    categories: ["packaging", "print"],
-    image: ShampooCanavisImage,
-    description:
-      "Una marca de shampoo que destaca la frescura y naturalidad de sus ingredientes.",
-    longDescription:
-      "Proyecto de identidad visual para una marca de shampoo natural. Se trabajó en la creación de un empaque atractivo y una imagen fresca.",
-    gallery: ShampooPagePrint[0].images,
-    tools: ["Illustrator", "Photoshop"],
-  },
+  }
 ];
 
 const categories = [

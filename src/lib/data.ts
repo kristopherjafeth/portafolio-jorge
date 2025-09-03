@@ -10,9 +10,14 @@ import Coffe1 from "../../public/coffe/1.jpg";
 import Coffe2 from "../../public/coffe/2.jpg";
 import Coffe3 from "../../public/coffe/3.jpg";
 import Coffe4 from "../../public/coffe/4.jpg";
+import Coffe5 from "../../public/coffe/5.jpg";
+import Coffe6 from "../../public/coffe/6.jpg";
+import Coffe7 from "../../public/coffe/7.jpg";
 
 import Shampoo1 from "../../public/fuertepoderoso/1.jpg";
 import Shampoo2 from "../../public/fuertepoderoso/2.jpg";
+import Shampoo3 from "../../public/fuertepoderoso/3.jpg";
+import Shampoo4 from "../../public/fuertepoderoso/4.jpg";
 
 import GrekImage1 from "../../public/grek/1.jpg";
 import GrekImage2 from "../../public/grek/2.jpg";
@@ -49,9 +54,12 @@ export const CoffePage = [
     {
         images: [
             Coffe2,
+               Coffe4,
             Coffe1,
             Coffe3,
-            Coffe4,
+            Coffe5,
+            Coffe6,
+            Coffe7
         ],
     },
 ];
@@ -59,15 +67,10 @@ export const CoffePage = [
 export const ShampooPage = [
     {
         images: [
-            Shampoo1
-        ],
-    },
-];
-
-export const ShampooPagePrint = [
-    {
-        images: [
-            Shampoo2
+             Shampoo1,
+             Shampoo2,
+             Shampoo3,
+             Shampoo4
         ],
     },
 ];
@@ -79,15 +82,8 @@ export const GrekPage = [
             GrekImage2,
             GrekImage3,
             GrekImage9,
-            GrekImage10
-        ],
-    },
-];
-
-export const GrekPagePrint = [
-    {
-        images: [
-            GrekImagePrint4,
+            GrekImage10,
+               GrekImagePrint4,
             GrekImagePrint5,
             GrekImagePrint6,
             GrekImagePrint7,
@@ -96,3 +92,4 @@ export const GrekPagePrint = [
         ],
     },
 ];
+
